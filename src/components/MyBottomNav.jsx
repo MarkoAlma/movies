@@ -18,16 +18,16 @@ export const MyBottomNav=()=> {
     else if (newValue == 2) navigate('/search')
   }
   return (
-    <Box sx={{ width: 500, position:'fixed', bottom:0, backgroundColor:'darkblue'}}>
+    <Box sx={{ width: '100vw',  position:'fixed', bottom:0,}}>
       <BottomNavigation
-        sx={{backgroundColor:'lightgray'}}
+        sx={{backgroundColor:'darkblue' }}
         showLabels
         value={value}
         onChange={handleChange}
       >
-        <BottomNavigationAction label="Movies" icon={<MdMovie />} />
-        <BottomNavigationAction label="TVSeries" icon={<MdOutlineLiveTv />} />
-        <BottomNavigationAction label="Search" icon={<FaSearch />} />
+        <BottomNavigationAction className='aktiv' sx={{color:'white'}} style={{ fontSize:'larger'  }} label="Movies" icon={<MdMovie />} />
+        <BottomNavigationAction className='aktiv' sx={{color:'white'}} label="TVSeries" style={{ fontSize:'larger'}} icon={<MdOutlineLiveTv />} />
+        <BottomNavigationAction className='aktiv' sx={{color:'white'}} label="Search" icon={<FaSearch />} style={{ fontSize:'larger'}} />
       </BottomNavigation>
     </Box>
   );
