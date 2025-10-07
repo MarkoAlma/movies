@@ -6,15 +6,20 @@ import { getData } from '../../utils'
 import MyCard from '../components/MyCard'
 
 const Movies = () => {
-  const {data, isLoading, isError} = useQuery({queryKey:['moviesdata', 'movie'], queryFn:getData})
+    const [page, setPage] = React.useState(1);
+  const {data, isLoading, isError} = useQuery({queryKey:['moviesdata', 'movie',page], queryFn:getData})
   data && console.log(data);
+  console.log(page);
+  
   
   return (
-    <PageLayout title="Movies">
+    <PageLayout title="Movies" page={page} setPage={setPage}>
       {isLoading && <CircularProgress /> }
-      <div style={{display:'grid', alignItems:'center', width:'1500px', gridTemplateColumns:'repeat(4,1fr)'}}>
+      <div className='card-grid'>
         {data && data.results.map(obj =>
-          <MyCard {...obj} key={obj.id}/>
+        <div key={obj.id} style={{flexBasis:'25%'}}>
+          <MyCard {...obj}/>
+        </div>
         )}
       </div>
     </PageLayout>
