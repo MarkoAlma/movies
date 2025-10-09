@@ -1,7 +1,7 @@
 import React from 'react'
 import { img_500 } from '../../utils'
 
-const MyCard = ({poster_path, title, overview, vote_count, vote_average}) => {
+const MyCard = ({poster_path, title, overview, vote_count, vote_average, }) => {
 
   const colors = [
     '#ff0000', '#ff3300', '#ff6600', '#ff9900', '#ffcc00',
@@ -16,15 +16,17 @@ const MyCard = ({poster_path, title, overview, vote_count, vote_average}) => {
       <img src={img_500+poster_path} alt=""/>
     </div>
   </div>
-  <div className="product-info hover-part" style={{display:'flex', flexDirection:'column', justifyContent:'space-between', paddingTop:'15px', height:'180px'}}>
+  <div className="product-info hover-part" style={{display:'flex', flexDirection:'column', justifyContent:'space-between', paddingTop:'15px'}}>
     <h2 className="product-title">{title}</h2>
     <div className="product-description">
       <p>{overview}</p>
     </div>
     <div className="product-features">
+
       <span className="feature">Water Resistant</span>
       <span className="feature">5-Year Warranty</span>
       <span className="feature">Swiss Made</span>
+    
     </div>
 
     <div className="product-meta static-part" style={{}}>
