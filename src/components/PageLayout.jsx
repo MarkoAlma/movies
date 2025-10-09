@@ -11,7 +11,9 @@ const PageLayout = ({title, children, page, setPage, type, selectedGenres, setSe
           {title != "Search page" && <Genres type={type} selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres}/> }
         <Box>{children}</Box>
           <Box display={'flex'} justifyContent={'center'} pb={'20px'}>
-    <ContentPagination page={page} setPage={setPage}/>
+    <div style={{display:'flex', alignContent:'center', justifyContent:'center'}}>
+      <ContentPagination page={page} setPage={setPage}/>
+    </div>
     </Box>
     </Container>
 

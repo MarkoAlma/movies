@@ -38,7 +38,9 @@ const SearchPage = () => {
 
 
     {data && data.results.forEach((obj, index) => {
-    columns[index % 4].push(<MyCard key={index} {...obj} />);
+      value==0?
+    columns[index % 4].push(<MyCard key={index} {...obj}/>)
+    :columns[index % 4].push(<MyCard key={index} {...obj} title={obj.name}/>)
   })}
 
   

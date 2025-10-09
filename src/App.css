@@ -65,9 +65,16 @@ max-height: 10px;
 
 .card-flex {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   gap: 20px;
-  padding: 20px;
+}
+
+.css-1xra8g6-MuiPagination-root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .els, .mas, .har, .neg {
@@ -76,6 +83,8 @@ display: flex;
 flex-direction: column;
 flex-wrap: wrap;
 gap: 20px;
+padding-top: 15px;
+padding-bottom: 15px;
 }
 
 .product-card {
@@ -96,6 +105,10 @@ gap: 20px;
 .MuiPaginationItem-root {
     color: white !important;
     font-weight: bold;
+}
+
+.css-1c5o7vy-MuiPagination-ul {
+    display: -webkit-box !important;
 }
 
 .MuiPaginationItem-root.Mui-selected {
@@ -275,31 +288,41 @@ gap: 20px;
     color: #22C55E;
 }
 
-@media (max-width: 400px) {
-    .product-card {
-        width: 90%;
+.css-1szi20d-MuiContainer-root {
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .els, .mas, .har, .neg {
+        flex-basis: 30% !important;
     }
-    
-    .product-title {
-        font-size: 18px;
+}
+
+@media screen and (max-width:670px) {
+    .els, .mas, .har, .neg {
+        flex-basis: 45% !important;
     }
-    
-    .product-image {
-        height: 200px;
-    }
-    
-    .product-bottom {
+    .product-rating {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        gap: 10px;
     }
-    
-    .product-price {
-        margin-bottom: 5px;
+
+    .rating-count {
+        margin-left: 0;
+        order: 2;
     }
-    
-    .product-button {
-        width: 100%;
-        justify-content: center;
+}
+
+
+@media screen and (max-width:550px) {
+    .els, .mas, .har, .neg {
+        flex-basis: 45% !important;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .els, .mas, .har, .neg {
+        flex-basis: 98% !important;
     }
 }
