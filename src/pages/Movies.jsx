@@ -26,7 +26,7 @@ const Movies = () => {
       {isLoading && <CircularProgress />}
 
       {data && data.results.forEach((obj, index) => {
-    columns[index % 4].push(<MyCard key={index} {...obj} />);
+    columns[index % 4].push(<MyCard key={index} {...obj} type='movie'/>);
   })}
 
   

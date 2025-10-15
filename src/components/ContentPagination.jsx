@@ -10,8 +10,8 @@ export const ContentPagination =({page, setPage})=> {
   };
 
   return (
-    <Stack spacing={2}>
-      <Pagination count={10} page={page} onChange={handleChange} />
+    <Stack spacing={2} style={{paddingTop:'25px'}}>
+      <Pagination count={10} page={page} onChange={handleChange}/>
     </Stack>
   );
 }
