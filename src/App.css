@@ -2,38 +2,142 @@
 .product-features,
 .product-meta {
   height: 100%;
-    overflow: hidden;
-  pointer-events: none;
-    transition: 5s;
+  overflow: hidden;
+  cursor: auto;
+  /* eltávolítva: transition: 5s; */
+}
+*{
+    cursor: auto;
+}
+.product-card {
+  min-height: 420px;
+  max-height: 420px;
+  /* eltávolítva: transition: max-height 3s ease; */
+  width: 100%;
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.product-card:hover {
-    max-height: 1000px !important;
-
+.product-tilt-effect {
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
-.product-description, .product-features {
-
-}
-
-.product-card:hover .product-description,
-.product-card:hover .product-features {
-max-height: 10px;
-  opacity: 1;
-  pointer-events: auto;
-  transition: 5s;
+.product-button {
+  background: linear-gradient(45deg, #18181B, #27272A);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* eltávolítva: transition: all 0.3s ease; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .product-meta {
-    z-index: 100;
+  background-color: rgb(250, 250, 250);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #F4F4F5;
+  height: fit-content;
+  width: 100%;
+  padding: 15px;
+  right: 0;
+  margin: 0;
+  margin-top: 50px;
+  z-index: 100;
 }
 
-.product-card:hover .product-description, .product-card:hover .product-info, .product-card:hover .product-features {
-    min-height: fit-content !important;
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
+.product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.product-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  height: 240px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* eltávolítva: transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1); */
+}
+
+.product-category {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #71717A;
+  margin-bottom: 8px;
+}
+
+.product-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #18181B;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.product-description p {
+  font-size: 14px;
+  color: #52525B;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.product-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.product-info{
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* Hover állapotokat is eltávolítjuk, hogy ne okozzanak konfliktust */
+.product-card:hover,
+.product-card:hover .product-description,
+.product-card:hover .product-features,
 .product-card:hover .product-info {
-    max-height: 10px !important;
+  /* nincs semmi */
 }
 
 /*
@@ -90,19 +194,6 @@ gap: 20px;
     padding-bottom: 15px;
 }
 
-.product-card {
- min-height: 420px;
- max-height: 420px;
- transition: max-height 3s ease;
-  width: 100%;
-  position: relative;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
 .MuiBox-root {
     display: flex;
@@ -126,66 +217,6 @@ gap: 20px;
 }
 
 
-.product-tilt-effect {
-    overflow: hidden;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-.product-image {
-    height: 240px;
-    overflow: hidden;
-
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.product-card:hover .product-image img {
-    transform: scale(1.05);
-}
-
-.product-info {
-    padding: 25px;
-    height: 0;
-}
-
-.product-category {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #71717A;
-    margin-bottom: 8px;
-}
-
-.product-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #18181B;
-    margin: 0 0 12px 0;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
-}
-
-.product-description p {
-    font-size: 14px;
-    color: #52525B;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.product-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
 .feature {
     font-size: 11px;
     background-color: #F4F4F5;
@@ -194,18 +225,6 @@ gap: 20px;
     padding: 4px 10px;
     border-radius: 12px;
     font-weight: 500;
-}
-
-.product-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.product-price {
-    display: flex;
-    flex-direction: column;
 }
 
 .price-was {
@@ -221,75 +240,24 @@ gap: 20px;
     color: #18181B;
 }
 
-.product-button {
-    background: linear-gradient(45deg, #18181B, #27272A);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-
-.product-button:hover {
-    background: linear-gradient(45deg, #27272A, #3F3F46);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.product-button:hover::before {
-    left: 100%;
-}
-
-
-.product-button:hover .button-icon {
-    transform: rotate(-10deg) scale(1.1);
-}
-
-.product-card:hover .product-info {
-    margin-bottom: 50px;
-}
 
 .css-vny7at {
     z-index: 1000;
 }
 
-.product-meta {
-    background-color: rgb(250,250,250);
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #F4F4F5;
-    height: fit-content;
-    width: 100%;
-    padding: 15px;
-    right: 0;
-    margin: 0;
-    margin-top: 50px;
-}
-
-
-
-.product-rating {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-}
 
 .rating-count {
     margin-left: 8px;
     font-size: 12px;
     color: #71717A;
+}
+
+.css-2hy7sk-MuiFormLabel-root-MuiInputLabel-root {
+    color: gray !important;
+}
+
+.MuiInputBase-root {
+    color: lightgray !important;
 }
 
 .product-stock {
@@ -391,4 +359,28 @@ gap: 20px;
     }
     .css-1wnsr1i {
     width: 100% !important;}
+}
+
+.nyilik {
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: max-height 1s ease, opacity 1s ease, visibility 0s linear 1s;
+}
+
+.nyitva .nyilik {
+  max-height: 300px; /* vagy auto, ha működik */
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.dobozka:hover img{
+    transform: scale(1.05);
+    transition:  0.5s ease;
+}
+.dobozka {
+    min-height: 420px;
+    max-height: fit-content !important;
+  position: relative; /* kell ahhoz, hogy az absolute gyereke ehhez viszonyítson */
+  overflow: visible;  /* vagy hidden, attól függően, hogy akarod-e a kidobott részt látni */
 }

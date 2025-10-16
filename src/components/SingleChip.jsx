@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import { MdOutlineRadioButtonChecked } from "react-icons/md";
 import { useState } from 'react';
 import { MdOutlineRadioButtonUnchecked } from "react-icons/md";
+import { blue } from '@mui/material/colors';
 
 export const SingleChip = ({id,name, selectedGenres, setSelectedGenres}) => {
     const [isSelected, setIsSelected] = useState(false)
@@ -22,6 +23,7 @@ export const SingleChip = ({id,name, selectedGenres, setSelectedGenres}) => {
         label={name}
         onClick={handleClick}
         icon={isSelected ? <MdOutlineRadioButtonChecked/>:<MdOutlineRadioButtonUnchecked/>}
+        sx={{backgroundColor: isSelected? 'rgb(60,60,60)' : 'rgb(20,20,20)'}}
       />
     </Stack>
   );

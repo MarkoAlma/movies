@@ -28,7 +28,6 @@ export const MyModal = ({id, type}) => {
   const {data, isLoading, isError} = useQuery({queryKey:['details', urlDetails], queryFn:getDetailsData}) 
 
   data && console.log(data);
-  
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -54,7 +53,7 @@ export const MyModal = ({id, type}) => {
         <Fade in={open}>
           <Box sx={style}>
             <Typography id="transition-modal-title" variant="h6" component="h2">
-              {data && <b>{data.title}</b>}
+              {data && <b> {type=='movie' ? data.title: data.name}</b>}
             </Typography>
             <Typography id="transition-modal-description" sx={{ mt: 2 }}>
               {data && <img className='img-fluid' style={{height:'100%', width:'100%'}} src={img_500+data.poster_path} alt="" />}

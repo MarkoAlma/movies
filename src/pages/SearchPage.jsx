@@ -27,12 +27,12 @@ const SearchPage = () => {
 
   return (
     <PageLayout title="Search page"  page={page} setPage={setPage}>
-      <div style={{display:'flex', flexDirection:'column'}}>
+      <div style={{display:'flex', flexDirection:'column'}}> <br />
       <div style={{display:'flex', alignItems:'center', gap:'20px', paddingBottom:'12px', justifyContent:'center'}}><TextField  id="standard-basic" label="Search" variant="standard" inputRef={inputRef}/> <FaSearch fontSize={'x-large'} onClick={()=>setTxt(inputRef.current.value)} style={{cursor:'pointer' }}/> </div>
       <div style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
         <Tabs style={{paddingBottom:'20px'}} value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Movies"/>
-          <Tab label="TV Series"/>
+          <Tab style={{color:'lightblue'}} label="Movies"/>
+          <Tab style={{color:'lightblue'}} label="TV Series"/>
         </Tabs>
       </div>
 

@@ -19,11 +19,11 @@ const TVSeries = () => {
       });
 
   return (
-    <PageLayout title="TVSeries" page={page} setPage={setPage} type='tv' selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres}>
+    <PageLayout title="TV Series" page={page} setPage={setPage} type='tv' selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres}>
       {isLoading && <CircularProgress />}
 
       {data && data.results.forEach((obj, index) => {
-    columns[index % 4].push(<MyCard key={index} {...obj} title={obj.name}/>);
+    columns[index % 4].push(<MyCard type='tv' key={index} {...obj} title={obj.name}/>);
   })}
 
   

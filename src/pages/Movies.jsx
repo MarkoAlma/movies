@@ -15,11 +15,10 @@ const Movies = () => {
   });
   const columns = [[], [], [], []];
 
-  
   data && console.log(data);
 
-
   console.log(page);
+  
 
   return (
     <PageLayout title="Movies" page={page} setPage={setPage} type='movie' selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres}>

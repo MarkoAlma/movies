@@ -6,9 +6,12 @@ import { MdMovie } from "react-icons/md";
 import { MdOutlineLiveTv } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from 'react-router';
+import { useEffect } from 'react';
 
 export const MyBottomNav=()=> {
-  const [value, setValue] = React.useState(0);
+  const currentUrl = window.location.pathname
+  const initialValue = currentUrl.includes('tvseries') ? 1 : currentUrl.includes('search') ? 2 : 0
+  const [value, setValue] = React.useState(initialValue);
   const navigate = useNavigate()
 
   const handleChange = (e, newValue) => {
@@ -17,10 +20,13 @@ export const MyBottomNav=()=> {
     else if (newValue == 1) navigate('/tvseries')
     else if (newValue == 2) navigate('/search')
   }
+
+
+
   return (
-    <Box sx={{ width: '100vw',  position:'fixed', bottom:0,}}>
+    <Box sx={{ width: '100vw',  position:'fixed', bottom:0, display:'flex', zIndex:'100'}}>
       <BottomNavigation
-        sx={{backgroundColor:'darkblue' }}
+        sx={{backgroundColor:'rgb(20,20,80)'}}
         showLabels
         value={value}
         onChange={handleChange}

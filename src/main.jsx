@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { CategProvider } from "./context/CategContext.jsx";
 
 const queryClient = new QueryClient()
 
 createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <CategProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </CategProvider>
   </QueryClientProvider>
 );
